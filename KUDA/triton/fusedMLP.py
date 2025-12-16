@@ -33,7 +33,6 @@ def fused_mlp_kernel(
 ):
 
     pid = tl.program_id(0)
-    grid_m = tl.cdiv(M, BLOCK_SIZE_M)
     grid_n = tl.cdiv(N, BLOCK_SIZE_N)
 
     pid_m = pid // grid_n
